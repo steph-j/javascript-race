@@ -1,8 +1,8 @@
   document.addEventListener('DOMContentLoaded', function() {
-    createEventListerener()
+    createEventListener()
   })
 
-  function createEventListerener() {
+  function createEventListener() {
     document.addEventListener('keyup', function(e) {
       // if key is pressed == to the correct key, 
       if (e.which === 13) {
@@ -17,16 +17,22 @@
     // set is-found to false
     var isFound = false;
     //define strip
-    var strip = document.getElementById(player)
+    var strip = document.getElementById(player);
       // loop through the children on the correct row. 
-    for (var i = 0; i < strip.children.length; i++) {
+    for (var i = 0; i < strip.children.length + 1; i++) {
       var cell = strip.children[i]
         // if - the table cell has active class. 
-      if (cell.className === "active") {
+        // alert("the string i " + i + "" + strip.children.length);
+      if (i === strip.children.length && cell.classList.contains("active")) {
+        alert("you have won");
+      }
+
+      else if (cell.className === "active") {
         // Make it inactive.
         cell.className = "";
         // set is-found to true 
         isFound = true;
+
       }
       // else p the is not active and is-found is true
       else if (cell.className === "" && isFound) {
@@ -35,30 +41,26 @@
         // reset isfound
         isFound = false;
       }
+      // }
     }
   }
 
-
-
-  // var strip1 = document.getElementById('player1_strip')
-  // var strip1 = strip1.children
-
-  // var strip2 = document.getElementById('player2_strip')
-  // var strip2 = strip2.children
-
-
-
-  // var name = prompt("What is your name?");
-
-  //   function move(key) {
-  //     console.log("I'm moving because you pressed key", key)
-  //     for (var i = 0; i < myTableArray.length; i++) {
-  //         if (td.className === "active") {
-  //           td.className = "";
-  //         } else {
-  //           td.className = "active"
-  //         }
+  // function winner(player){
+  // //winner equals strip with no 'active' cell
+  // for (var i = i < strip.children.length; i++) {
+  //   if (.className === "") {
+  //     alert("You have won")
   //   }
+  //  }
+  // }
 
+  // //collect the result from the end of the game
+  // //if car wins
+  //   //alert "car wins"
+  // //else if buzz wins
+  //   //alert "buzz wins"
+  // }
 
-  //
+  // //Prompt "would you like to play again?"
+  //   //if no cell holds active 
+  //     //add active to first cell.
