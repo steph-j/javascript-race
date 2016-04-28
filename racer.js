@@ -1,4 +1,4 @@
-  document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     createEventListener()
   })
 
@@ -13,7 +13,11 @@
     })
   }
 
-  function updatePlayer(player) {
+  // function restart (player) {
+
+  // }
+
+  function updatePlayer (player) {
     // set is-found to false
     var isFound = false;
     //define strip
@@ -23,8 +27,8 @@
       var cell = strip.children[i]
         // if - the table cell has active class. 
         // alert("the string i " + i + "" + strip.children.length);
-      if (i === strip.children.length && cell.classList.contains("active")) {
-        alert("you have won");
+      if (i === strip.children.length-1 && cell.className === ("active")) {
+        alert("you have won " + player);
       }
 
       else if (cell.className === "active") {
