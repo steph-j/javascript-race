@@ -1,13 +1,20 @@
 h1 {
-  background-color: red;
-  padding: 2%;
+  color: red;
+  font-family: 'Nova Round', cursive;
+}
+
+p {
+  font-family: 'Nova Round', cursive;
 }
 
 .racer_table td {
   background-color: #666;
   height: 200px;
   width: 200px;
-  border-color: red;
+}
+
+#player1_strip {
+  border-bottom: thick dashed #999;
 }
 
 #player1_strip .active {
@@ -17,7 +24,7 @@ h1 {
 } 
 
 #player2_strip .active {
-  background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOYkExtGqXWOQxGnIyfUaDp6lhe36xGoMLJT0C7rAQbrw8Mdo3GA");
+  background:url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT1IhmnDeBjRR6byl07VScJtKse5Os2yvc03iXJ7_ffjH4atm7j");
   background-size: 200px 200px;
   background-repeat: no-repeat;
 }
