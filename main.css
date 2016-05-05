@@ -28,3 +28,17 @@ p {
   background-size: 200px 200px;
   background-repeat: no-repeat;
 }
+
+.hide {
+  display: none;
+}
+
+.count  {
+  padding: 30px;
+  background-color: black;
+  color: white;
+  height: 50px;
+  width:50px;
+  display: inline-block;
+  text-align: center;
+}

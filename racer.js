@@ -1,4 +1,9 @@
  document.addEventListener('DOMContentLoaded', function() {
+   var game = prompt('Would you like to play a game?', 'yes');
+    if (game ==='yes') {
+      countDown()
+    }
+
    createEventListener()
  })
 
@@ -12,6 +17,16 @@
      }
    })
  }
+
+function countDown() {
+  var count = document.getElementsByClassName('count');
+ 
+  for (var i = 0; i < count.length; i++) {
+      count[0].className === 'hide';
+         console.log(count[0]);
+  }
+  // while num is less than length
+}
 
  function restartGame(player) {
   for (var i = 0; i < player.children.length; i++) {
@@ -56,6 +71,8 @@
      // }
    }
  }
+
+
 
 
  // function winner(player){
