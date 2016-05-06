@@ -12,7 +12,7 @@
  function setCount() {
    var timer = setInterval(function() {
      countDown(timer)
-   }, 1000);
+   }, 100);
  }
 
  function countDown(timer) {
@@ -49,16 +49,15 @@
 
  // LENGTHEN THE TRACK
  function lengthenTrack(player) {
-   var length = prompt("Pick a number between 7 - 20", "7 - 20")
-   var trackLength = length - 7;
-   console.log(trackLength);
-   if (length <= 7 || isNaN(trackLength)) {
+   var add = prompt("Pick a number between 1 - 10", "1 - 10");
+   add = parseInt(add);
+   console.log(add);
+   for (var i = 0; i < add; i++) {
+   if (add <= 0 || isNaN(add)) {
      alert("Sorry, that isn't lengthening the track")
-     var length = prompt("Pick a number between 7 - 20", "7 - 20")
-
    }
-   var row = document.getElementsByTagName("tr")[0];
-   var x = row.insertCell(trackLength);
+   var insert = player.insertCell(1);
+   }
  }
 
  // UPDATE THE PLAYER POSSITION
