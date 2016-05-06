@@ -2,7 +2,7 @@
    var game = prompt('Would you like to play a game?', 'yes');
    if (game === 'yes') {
      setCount()
-   }
+   } 
  })
 
  var num = 3;
