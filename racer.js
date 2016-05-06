@@ -2,9 +2,10 @@
    var game = prompt('Would you like to play a game?', 'yes');
    if (game === 'yes') {
      setCount()
-   } 
+   }
  })
 
+ // COUNTDOWN SEQUENCE
  var num = 3;
  var table = document.getElementsByTagName('table');
 
@@ -26,6 +27,7 @@
    }
  }
 
+ // KEYPRESS EVENT LISTENER
  function createEventListener() {
    document.addEventListener('keyup', function(e) {
      // if key is pressed == to the correct key, 
@@ -37,8 +39,7 @@
    })
  }
 
- // while num is less than length
-
+ // RESTART GAME
  function restartGame(player) {
    for (var i = 0; i < player.children.length; i++) {
      player.children[i].className = "";
@@ -46,6 +47,21 @@
    player.children[0].className = "active";
  }
 
+ // LENGTHEN THE TRACK
+ function lengthenTrack(player) {
+   var length = prompt("Pick a number between 7 - 20", "7 - 20")
+   var trackLength = length - 7;
+   console.log(trackLength);
+   if (length <= 7 || isNaN(trackLength)) {
+     alert("Sorry, that isn't lengthening the track")
+     var length = prompt("Pick a number between 7 - 20", "7 - 20")
+
+   }
+   var row = document.getElementsByTagName("tr")[0];
+   var x = row.insertCell(trackLength);
+ }
+
+ // UPDATE THE PLAYER POSSITION
  function updatePlayer(player) {
    // set is-found to false
    var isFound = false;
@@ -62,6 +78,14 @@
        if (choice === 'yes') {
          restartGame(player1_strip);
          restartGame(player2_strip);
+         var answer = prompt('Would you like to lengthen the track?', 'yes');
+         if (choice === 'yes') {
+           lengthenTrack(player1_strip);
+           lengthenTrack(player2_strip);
+         } else {
+           restartGame(player1_strip);
+           restartGame(player2_strip);
+         }
        } else {
          alert("Go in peace")
        }
@@ -82,25 +106,3 @@
      // }
    }
  }
-
-
-
- // function winner(player){
- // //winner equals strip with no 'active' cell
- // for (var i = i < strip.children.length; i++) {
- //   if (.className === "") {
- //     alert("You have won")
- //   }
- //  }
- // }
-
- // //collect the result from the end of the game
- // //if car wins
- //   //alert "car wins"
- // //else if buzz wins
- //   //alert "buzz wins"
- // }
-
- // //Prompt "would you like to play again?"
- //   //if no cell holds active 
- //     //add active to first cell.
