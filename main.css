@@ -33,7 +33,7 @@ p {
   display: none;
 }
 
-.count  {
+.count3, .count2, .count1, .count0  {
   padding: 30px;
   background-color: black;
   color: white;

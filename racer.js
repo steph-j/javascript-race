@@ -1,11 +1,29 @@
  document.addEventListener('DOMContentLoaded', function() {
    var game = prompt('Would you like to play a game?', 'yes');
-    if (game ==='yes') {
-      countDown()
-    }
-
-   createEventListener()
+   if (game === 'yes') {
+     setCount()
+   }
  })
+
+ var num = 3;
+ var timer;
+
+ function setCount() {
+   var timer = setInterval(function() {
+     countDown(timer)
+   }, 2000);
+ }
+
+ function countDown(timer) {
+   var count = document.getElementsByClassName('count' + num);
+   count[0].className = 'hide';
+   console.log(count[0]);
+   --num;
+   if (num === -1) {
+     clearInterval(timer);
+     createEventListener()
+   }
+ }
 
  function createEventListener() {
    document.addEventListener('keyup', function(e) {
@@ -18,20 +36,12 @@
    })
  }
 
-function countDown() {
-  var count = document.getElementsByClassName('count');
- 
-  for (var i = 0; i < count.length; i++) {
-      count[0].className === 'hide';
-         console.log(count[0]);
-  }
-  // while num is less than length
-}
+ // while num is less than length
 
  function restartGame(player) {
-  for (var i = 0; i < player.children.length; i++) {
-   player.children[i].className = "";
-  }
+   for (var i = 0; i < player.children.length; i++) {
+     player.children[i].className = "";
+   }
    player.children[0].className = "active";
  }
 
@@ -71,7 +81,6 @@ function countDown() {
      // }
    }
  }
-
 
 
 
