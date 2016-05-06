@@ -6,12 +6,12 @@
  })
 
  var num = 3;
- var timer;
+ var table = document.getElementsByTagName('table');
 
  function setCount() {
    var timer = setInterval(function() {
      countDown(timer)
-   }, 2000);
+   }, 1000);
  }
 
  function countDown(timer) {
@@ -21,7 +21,8 @@
    --num;
    if (num === -1) {
      clearInterval(timer);
-     createEventListener()
+     createEventListener();
+     table[0].className = 'racer_table';
    }
  }
 
