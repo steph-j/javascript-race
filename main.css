@@ -38,13 +38,30 @@ p {
 
 .count3, .count2, .count1, .count0  {
   padding: 30px;
-  background-color: black;
   color: white;
-  height: 50px;
-  width:50px;
-  display: inline-block;
+  height: 100px;
+  width: 100%;
+  display: block;
   text-align: center;
+  font-size: 250%;
 }
+
+.count3 {
+  background-color: red;
+}
+
+.count2 {
+  background-color: orange;
+}
+
+.count1 {
+  background-color: green;
+}
+
+// .count0 {
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
 
 .clear {
   padding: 25px;
