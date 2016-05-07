@@ -78,7 +78,7 @@
          restartGame(player1_strip);
          restartGame(player2_strip);
          var answer = prompt('Would you like to lengthen the track?', 'yes');
-         if (choice === 'yes') {
+         if (answer == 'yes') {
            lengthenTrack(player1_strip);
            lengthenTrack(player2_strip);
          } else {
