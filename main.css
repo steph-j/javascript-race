@@ -9,7 +9,7 @@ p {
 
 .racer_table td {
   background-color: #666;
-  height: 200px;
+  height: 125px;
   width: 200px;
 }
 
@@ -19,14 +19,17 @@ p {
 
 #player1_strip .active {
   background:url("http://kiwianatown.co.nz/wp-content/uploads/2014/10/buzzybee.jpg"); 
-  background-size: 200px 200px;
+  background-size:contain;
   background-repeat: no-repeat;
+  background-color: #666;
 } 
 
 #player2_strip .active {
   background:url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT1IhmnDeBjRR6byl07VScJtKse5Os2yvc03iXJ7_ffjH4atm7j");
-  background-size: 200px 200px;
+  background-size:contain;
   background-repeat: no-repeat;
+  background-color: #666;
+  
 }
 
 .hide {
@@ -41,4 +44,8 @@ p {
   width:50px;
   display: inline-block;
   text-align: center;
+}
+
+.clear {
+  padding: 25px;
 }

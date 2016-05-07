@@ -12,7 +12,7 @@
  function setCount() {
    var timer = setInterval(function() {
      countDown(timer)
-   }, 100);
+   }, 700);
  }
 
  function countDown(timer) {
@@ -53,10 +53,10 @@
    add = parseInt(add);
    console.log(add);
    for (var i = 0; i < add; i++) {
-   if (add <= 0 || isNaN(add)) {
-     alert("Sorry, that isn't lengthening the track")
-   }
-   var insert = player.insertCell(1);
+     if (add <= 0 || isNaN(add)) {
+       alert("Sorry, that isn't lengthening the track")
+     }
+     var insert = player.insertCell(1);
    }
  }
 
@@ -74,16 +74,21 @@
      if (i === strip.children.length - 1 && cell.className === ("active")) {
        alert("you have won " + player);
        var choice = prompt("would you like to play again?", "yes");
-       if (choice === 'yes') {
+       if (choice == 'yes') {
          restartGame(player1_strip);
          restartGame(player2_strip);
-         var answer = prompt('Would you like to lengthen the track?', 'yes');
+         var answer = prompt('Would you like to lengthen the track?', 'yes, no, reset');
          if (answer == 'yes') {
            lengthenTrack(player1_strip);
            lengthenTrack(player2_strip);
-         } else {
+         } else if (answer == 'no') {
            restartGame(player1_strip);
            restartGame(player2_strip);
+         } else {
+          // function not yet built
+           // reSetGame(player1_strip) 
+           // reSetGame(player2_strip) 
+           // go through the table cell and delete any over the number of 3
          }
        } else {
          alert("Go in peace")
@@ -93,7 +98,6 @@
        cell.className = "";
        // set is-found to true 
        isFound = true;
-
      }
      // else p the is not active and is-found is true
      else if (cell.className === "" && isFound) {
@@ -102,6 +106,5 @@
        // reset isfound
        isFound = false;
      }
-     // }
    }
  }
