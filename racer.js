@@ -47,9 +47,6 @@
    player.children[0].className = "active";
  }
 
- // LENGTHEN THE TRACK
-
-
  // UPDATE THE PLAYER POSSITION
  function updatePlayer(player) {
    // set is-found to false
@@ -71,25 +68,23 @@
          if (answer == 'yes') {
            var add = prompt("Pick a number between 1 - 10", "1 - 10");
            add = parseInt(add);
+           if (isNaN(add) || add < 1) {
+             alert("Sorry, that isn't lengthening the track")
+             var add = prompt("Pick a number between 1 - 10", "1 - 10");
+           }
+           console.log(add);
+           // LENGTHEN THE TRACK
            function lengthenTrack(player) {
-             console.log(add);
              for (var i = 0; i < add; i++) {
-               if (add < 0 || isNaN(add)) {
-                 var addAlert = alert("Sorry, that isn't lengthening the track")
-               }
                var insert = player.insertCell(1);
              }
            }
            lengthenTrack(player1_strip);
            lengthenTrack(player2_strip);
-         } else if (answer == 'no') {
-           restartGame(player1_strip);
-           restartGame(player2_strip);
-         } else {
-           // function not yet built
+           // } else if (answer == 'reset') {
+           // function not yet built - go through the table cell and delete any over the number of 7
            // reSetGame(player1_strip) 
            // reSetGame(player2_strip) 
-           // go through the table cell and delete any over the number of 3
          }
        } else {
          alert("Go in peace")
