@@ -48,17 +48,7 @@
  }
 
  // LENGTHEN THE TRACK
- function lengthenTrack(player) {
-   var add = prompt("Pick a number between 1 - 10", "1 - 10");
-   add = parseInt(add);
-   console.log(add);
-   for (var i = 0; i < add; i++) {
-     if (add <= 0 || isNaN(add)) {
-       alert("Sorry, that isn't lengthening the track")
-     }
-     var insert = player.insertCell(1);
-   }
- }
+
 
  // UPDATE THE PLAYER POSSITION
  function updatePlayer(player) {
@@ -79,13 +69,24 @@
          restartGame(player2_strip);
          var answer = prompt('Would you like to lengthen the track?', 'yes, no, reset');
          if (answer == 'yes') {
+           var add = prompt("Pick a number between 1 - 10", "1 - 10");
+           add = parseInt(add);
+           function lengthenTrack(player) {
+             console.log(add);
+             for (var i = 0; i < add; i++) {
+               if (add < 0 || isNaN(add)) {
+                 var addAlert = alert("Sorry, that isn't lengthening the track")
+               }
+               var insert = player.insertCell(1);
+             }
+           }
            lengthenTrack(player1_strip);
            lengthenTrack(player2_strip);
          } else if (answer == 'no') {
            restartGame(player1_strip);
            restartGame(player2_strip);
          } else {
-          // function not yet built
+           // function not yet built
            // reSetGame(player1_strip) 
            // reSetGame(player2_strip) 
            // go through the table cell and delete any over the number of 3
