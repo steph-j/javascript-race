@@ -67,7 +67,7 @@
        if (choice == 'yes') {
          restartGame(player1_strip);
          restartGame(player2_strip);
-         var answer = prompt('Would you like to lengthen the track?', 'yes, no, reset');
+         var answer = prompt('Would you like to lengthen the track?', 'yes');
          if (answer == 'yes') {
            var add = prompt("Pick a number between 1 - 10", "1 - 10");
            add = parseInt(add);
